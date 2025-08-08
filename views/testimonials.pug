@@ -1,0 +1,29 @@
+extends ./layout/index.pug
+
+block content 
+  main.container
+    h2.title-section Testimonials from our clients
+
+    div.container-testimonials
+      each testimonial in testimonials
+        - const { name, message } = testimonial
+        div.testimonial
+          p.testimonial-message #{message}
+          p.testimonial-name #{name}
+    
+    h2.title-section We want to know your opinion
+
+    if(errorMessage)
+      p.error-message #{errorMessage}
+
+    form(action="/testimonials", method="POST")
+      div.form-field
+        label(for="name") Name 
+        input(type="text", id="name", class="form-input", name="name", placeholder="Your name goes here...", autocomplete="off", value= name, required)
+      div.form-field
+        label(for="email") Email 
+        input(type="email", id="email", class="form-input", name="email", placeholder="Your email goes here...", autocomplete="off", value= email, required)
+      div.form-field
+        label(for="message") Message 
+        textarea(name="message", id="message" class="form-input", placeholder="Your message goes here...", rows= 3, spellcheck="true", autocomplete="off", required)= message
+      button(class="btn", type="submit") Submit

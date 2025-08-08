@@ -1,0 +1,33 @@
+extends ./layout/index.pug
+
+block content
+  h2.title-section #{actualSection}
+
+  main.container
+    div.sections-container
+      section 
+        h3 Our Blog
+        
+        each article in articles
+          - const { name, description, image, slug } = article
+          article.article
+            div
+              img(loading="lazy", src=`/img/blog${image}.webp`, alt=`Image About ${name}`, title=`Image About ${name}`)
+            div.article-content
+              h4 #{name}
+              p #{description.substr(0, 150) + '...'}
+              a(href=`article/${slug}`, class="btn") Read Article
+
+      aside
+        h3 Our Courses and Workshops
+
+        each course in courses
+          - const { name, price, places, slug} = course
+
+          div.course-aside
+            h4 #{name}
+            p Price: 
+              span.bold $#{price} Dolars
+            p Places: 
+              span.bold #{places} Available(s)
+            a(href=`courses/${slug}`, class="btn") Information about this course

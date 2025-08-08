@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="color-scheme", content="light dark")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="icon" href="/img/web-icon.svg" type="image/svg+xml")
+    title Out of Service
+    link(rel="preload", href="/css/modern-normalize.css" as="style")
+    link(rel="stylesheet", href="/css/modern-normalize.css")
+    link(rel="preload", href="/css/styles.css" as="style")
+    link(rel="stylesheet", href="/css/styles.css")
+
+  body 
+    main.container.container-out-of-service
+      h1 #{errorMessage}
+      p Sorry for the inconvenience.

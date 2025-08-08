@@ -1,0 +1,61 @@
+/** Globals **/
+.nav-container {
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/** home.pug **/
+.sections-container {
+  grid-template-columns: 1fr;
+
+  & h3 {
+    text-align: center;
+  }
+
+  & .btn {
+    margin: 0 auto;
+  }
+}
+
+aside {
+  padding-top: 4rem;
+  border-top: 1px solid grey;
+}
+
+/** about-us.pug **/
+.container-about-us {
+  grid-template-columns: 1fr;
+}
+
+/** courses.pug **/
+.card {
+  grid-template-columns: 1fr;
+}
+
+.container-content {
+  & h3 {
+    margin-top: 0;
+  }
+
+  & a {
+    margin: 0 auto;
+  }
+
+  & a:active {
+    transform: scale(0.9);
+  }
+}
+
+/** course.pug **/
+.course-card {
+  grid-template-columns: 1fr;
+}
+
+.form-field {
+  width: 100%;
+}
+
+/** testimonials.pug **/
+.container-testimonials {
+  grid-template-columns: repeat(1, 1fr);
+}

@@ -1,0 +1,17 @@
+extends ./layout/index.pug
+
+block content
+  h1 #{actualSection}
+
+  main.container 
+    div.card.course-card
+      div
+        img( src=`/img/course${image}.jpg`, class="course-image" , alt=`Image about ${name}`, title=`Image about ${name}`)
+      div.container-content
+        p Price: 
+          span.bold $#{price} Dolars
+        p Places: 
+              span.bold #{places} Available(s)
+        p.description #{description}
+
+        a(href="/courses", class="btn") Go back

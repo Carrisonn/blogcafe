@@ -1,0 +1,10 @@
+extends ./layout/index.pug
+
+block content
+  h1 #{actualSection}
+
+  main.container 
+    div.single-article
+      img(src=`/img/blog${image}.webp`, alt=`Image about ${name}`, title=`Image about ${name}`)
+      p #{description}
+      a(href="/", class="btn") Go back 
