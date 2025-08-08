@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize'
+import dotenv from 'dotenv'
 
-process.loadEnvFile()
+dotenv.config()
 
 const DB = new Sequelize(process.env.DATABASE_URL, {
   define: { timestamps: false },
